@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#120d1d" />
+  <meta name="description" content="A cinematic birthday surprise created especially for Sanjana." />
+  <title>For Sanjana | A Birthday in the Stars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site-noise" aria-hidden="true"></div>
+  <canvas id="space-canvas" aria-hidden="true"></canvas>
+
+  <div id="intro" class="intro-screen">
+    <div class="intro-orbit orbit-one"></div>
+    <div class="intro-orbit orbit-two"></div>
+    <div class="intro-content">
+      <p class="eyebrow intro-eyebrow">A private universe / 08.11</p>
+      <div class="intro-words" aria-live="polite">
+        <span class="intro-line is-visible">I created something<br />special for you<span class="accent">.</span></span>
+        <span class="intro-line">Sanjana <span class="heart-text">&#9829;</span></span>
+        <span class="intro-line">Are you ready<br />for your surprise?</span>
+      </div>
+      <button class="button button-primary intro-enter" id="enter-btn" type="button"><span>Enter my heart</span><b>&#9829;</b></button>
+      <div class="intro-scroll"><span></span>take a breath</div>
+    </div>
+    <div class="intro-meta"><span>FOR SANJANA</span><span>EST. THE DAY YOU ARRIVED</span></div>
+  </div>
+
+  <header class="site-header">
+    <a href="#top" class="brand" aria-label="Back to top"><span class="brand-mark">S</span><span>08 / 11</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#memories">Memories</a><a href="#letter">Letter</a><a href="#story">Our story</a><a href="#wish">Make a wish</a>
+    </nav>
+    <div class="music-tools"><label class="music-upload" for="music-input"><span>＋</span><span>choose song</span></label><input id="music-input" type="file" accept="audio/*" /><button class="music-toggle" id="music-toggle" type="button" aria-label="Play birthday music"><span class="music-icon">♪</span><span id="music-label">sound off</span></button></div>
+  </header>
+
+  <main id="top" class="hidden-until-enter">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A celebration of one in a billion</p>
+        <h1>Happy birthday<br /><em>Sanjana</em> <span class="hero-heart">&#9829;</span></h1>
+        <p class="hero-date">November 08 <span>/</span> your day, entirely</p>
+        <p class="hero-description">The world became a little more beautiful<br class="desktop-only" /> on the day you were born.</p>
+        <button class="button button-outline" data-scroll="#countdown" type="button">Start the surprise <span>&#10024;</span></button>
+      </div>
+      <div class="hero-art reveal reveal-delay-2" aria-label="A glowing 3D heart">
+        <div class="heart-aura"></div><div class="hero-heart-3d">&#9829;</div>
+        <div class="orbit-ring ring-a"></div><div class="orbit-ring ring-b"></div>
+        <span class="art-note note-top">made of light</span><span class="art-note note-bottom">for you, always</span>
+      </div>
+      <div class="hero-footer"><span>SCROLL TO EXPLORE</span><span class="line"></span><span>01 — 08</span></div>
+    </section>
+
+    <section id="countdown" class="countdown-section section-shell reveal">
+      <div class="section-kicker">The date is circled in gold</div>
+      <div class="countdown-layout"><div><h2>Counting down to<br /><em>Sanjana's special day</em> <span>&#9829;</span></h2><p class="section-intro">Every second is one step closer to celebrating the person who makes life feel like a little more magic.</p></div><div id="countdown-grid" class="countdown-grid" aria-label="Countdown"><div><strong data-unit="days">00</strong><small>days</small></div><div><strong data-unit="hours">00</strong><small>hours</small></div><div><strong data-unit="minutes">00</strong><small>minutes</small></div><div><strong data-unit="seconds">00</strong><small>seconds</small></div></div></div>
+      <div id="birthday-today" class="birthday-today" hidden>Today is Sanjana's day! <span>&#127874;&#9829;</span></div>
+    </section>
+
+    <section id="memories" class="memories-section section-shell">
+      <div class="section-heading reveal"><div><div class="section-kicker">A little archive of us</div><h2>Our beautiful<br /><em>memories</em> <span>&#128247;</span></h2></div><p>Bring your favorite moments into this little universe.<br />They stay right here, on your device.</p></div>
+      <div id="drop-zone" class="drop-zone reveal" role="button" tabindex="0" aria-controls="photo-input" aria-label="Choose memory photos"><div class="drop-icon">+</div><div><strong>Drop memories here</strong><span>or choose photos from your device</span></div><label class="button button-small" for="photo-input">Choose photos</label><input id="photo-input" type="file" accept="image/*" multiple /></div>
+      <div id="memory-gallery" class="memory-gallery" aria-live="polite"><div class="empty-gallery"><span class="empty-star">&#10022;</span><p>Your memories will float here</p><small>Upload a few photos to begin</small></div></div>
+      <p class="privacy-note"><span>&#9679;</span> Private by design. Photos never leave this browser.</p>
+    </section>
+
+    <section id="letter" class="letter-section section-shell">
+      <div class="letter-stamp">S<br /><span>08.11</span></div>
+      <div class="section-kicker reveal">Written under the same moon</div><h2 class="reveal">A little message<br /><em>for you...</em></h2>
+      <div class="letter-paper reveal"><div class="paper-rule"></div><p id="typewriter" class="letter-text"></p><span class="letter-cursor">|</span><div class="paper-signoff">With all my heart,<br /><em>always</em> <span>&#9829;</span></div></div>
+      <div class="letter-heart heart-left">&#9829;</div><div class="letter-heart heart-right">&#9829;</div>
+    </section>
+
+    <section class="reasons-section section-shell">
+      <div class="section-heading reveal"><div><div class="section-kicker">No. 01 — through my eyes</div><h2>Why I<br /><em>love you</em></h2></div><p>Five little truths, though I could keep going<br />until the stars run out.</p></div>
+      <div id="reasons-grid" class="reasons-grid"></div>
+    </section>
+
+    <section id="story" class="story-section section-shell">
+      <div class="section-kicker reveal">A constellation of moments</div><h2 class="reveal">Our story <span>&#9829;</span></h2>
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section class="garden-section section-shell"><div class="garden-content reveal"><div class="section-kicker">A garden grown from a thought</div><h2>For the most<br /><em>beautiful girl</em></h2><p>Some flowers bloom in gardens.<br />You made a garden bloom in me.</p><span class="garden-signature">Sanjana <span>&#10047;</span></span></div><div class="rose-garden" id="rose-garden" aria-hidden="true"><div class="rose rose-one">&#10047;</div><div class="rose rose-two">&#10047;</div><div class="rose rose-three">&#10047;</div><div class="stem stem-one"></div><div class="stem stem-two"></div><div class="stem stem-three"></div></div></section>
+
+    <section id="wish" class="wish-section section-shell"><div class="section-kicker reveal">The candles are waiting</div><h2 class="reveal">Make a wish,<br /><em>Sanjana</em> <span>&#127874;</span></h2><div class="cake-stage reveal"><div class="cake-glow"></div><div class="cake"><div class="flames"><i></i><i></i><i></i><i></i><i></i></div><div class="candles"><b></b><b></b><b></b><b></b><b></b></div><div class="cake-top"></div><div class="cake-layer layer-one"></div><div class="cake-layer layer-two"></div><div class="cake-plate"></div></div></div><button id="wish-btn" class="button button-primary" type="button">Make a wish <span>&#10024;</span></button><p id="wish-message" class="wish-message" aria-live="polite"></p></section>
+
+    <section class="finale-section section-shell"><div class="finale-before" id="finale-before"><div class="section-kicker">There is one more thing</div><h2>Wait... one last<br /><em>surprise</em> <span>&#9829;</span></h2><button id="finale-btn" class="button button-outline" type="button">Open your final surprise <span>&#128140;</span></button></div><div class="finale-after" id="finale-after" hidden><div class="finale-crown">&#10022;</div><div class="section-kicker">08 November / forever yours</div><h2>Happy birthday<br /><em>Sanjana</em> <span>&#9829;</span></h2><p class="finale-date">November 8 — your special day</p><p class="final-message">Sanjana,<br /><br />If I could give you one thing today,<br />I would give you the ability to see yourself through my eyes.<br /><br />Then you would know just how beautiful,<br />special and precious you truly are.<br /><br />May your smile never fade.<br />May your dreams come true.<br />May every year bring you more happiness.<br /><br />Happy Birthday, Sanjana. <span>&#9829;</span><br /><br />You deserve all the beautiful things in this world. <span>&#10024;</span></p></div><div id="celebration" class="celebration" aria-hidden="true"></div></section>
+  </main>
+  <footer class="site-footer"><span>Made with an unreasonable amount of love</span><span>Sanjana <span>&#9829;</span> November 8</span></footer>
+
+  <audio id="birthday-audio" loop preload="none"><source src="assets/birthday-song.mp3" type="audio/mpeg" /></audio>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
